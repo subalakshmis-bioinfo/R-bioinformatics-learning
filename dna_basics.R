@@ -51,3 +51,19 @@ dna <- "ATGCATGC"print(length)
  C = C_count,
  gc_percent = GC_percent)
  print(results)
+
+
+ # Three DNA sequences
+dna_sequences <- c(
+   "ATGC",
+   "AAAGGGCC",
+   "ATATAT"
+ )
+ 
+ # Function to calculate GC content
+ gc_content <- function(dna){
+ bases <- strsplit(dna,"")[[1]]
+ gc_count <- sum(bases == "G" | bases == "C")
+ gc_content <- (gc_count/nchar(dna))*100}
+ sapply(dna_sequences,gc_content)
+
