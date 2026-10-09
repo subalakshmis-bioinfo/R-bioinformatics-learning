@@ -67,3 +67,13 @@ dna_sequences <- c(
  gc_content <- (gc_count/nchar(dna))*100}
  sapply(dna_sequences,gc_content)
 
+nucleotide_count <- function(dna){
+ bases <- strsplit(dna,"")[[1]]
+ A <- sum(bases == "A")
+ T <- sum(bases == "T")
+ G <- sum(bases == "G")
+ C <- sum(bases == "C")
+ return(c(A = A, T = T, G = G, C = C))
+ }
+ nucleotide_count("ATTGGCCATC")
+
